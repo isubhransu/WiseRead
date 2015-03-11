@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bgcol">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:id="@+id/header"
+    android:background="@color/headcol"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginLeft="10dp"
+        android:text="WiseRead"
+        android:typeface="monospace"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true" />
+    <ImageView
+
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+        android:background="@drawable/social_notifications"
+        android:id="@+id/imageView2"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView2s" />
+    <ImageView
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/action_navigation"
+        android:id="@+id/imageView2s"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_below="@+id/header"
+    android:background="@color/headcol"
+    android:id="@+id/linearLayout"
+    android:orientation="vertical">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_below="@+id/header"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/actionhome"
+            android:id="@+id/imageVievw"
+            android:layout_marginLeft="39dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/social_person"
+            android:id="@+id/imageVievdw"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="44dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/action_search"
+            android:id="@+id/imageVievddw"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
