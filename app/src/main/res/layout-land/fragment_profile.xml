@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <ImageView
+                android:background="@drawable/demo_profile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="280dp"
+                android:id="@+id/peopleprofilepic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Subhransu Mishra"
+                android:id="@+id/PersonName"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Graduate Student at ASU"
+                android:id="@+id/Bio"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#949391"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:layout_marginLeft="80dp"
+                android:text="Read List"
+                android:id="@+id/readlist"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:layout_marginLeft="100dp"
+                android:text="12"
+                android:id="@+id/readlistcount"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#949391"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:layout_marginLeft="265dp"
+                android:text="Followers"
+                android:id="@+id/Followers"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:textStyle="bold"
+                android:gravity="left"
+                android:layout_marginLeft="290dp"
+                android:text="54"
+                android:id="@+id/Followerscount"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#949391"
+                android:textSize="17dp"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:layout_marginLeft="430dp"
+                android:text="Following"
+                android:id="@+id/Following"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:layout_marginLeft="450dp"
+                android:text="23"
+                android:id="@+id/followingcount"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp">
+        <GridView
+            android:id="@+id/myfeedgrid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:columnWidth="200dp"
+            android:gravity="center"
+            android:horizontalSpacing="2dp"
+            android:numColumns="1"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true">
+        </GridView>
+
+    </RelativeLayout>
+</RelativeLayout>

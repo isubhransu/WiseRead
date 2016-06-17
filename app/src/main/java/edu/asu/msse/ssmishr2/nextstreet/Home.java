@@ -12,31 +12,19 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.support.v4.app.FragmentActivity;
-
 import com.nextstreet.adapter.adapt.TabsPagerAdapter;
-
 
 /**
  * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
  *
  * @author Subhransu Mishra s.mishra@asu.edu
  *         MS Software Engineering, CIDSE, ASU
- * @version February 18 2015
+ *
+ * @version May 1st 2015
  */
-
 
 public class Home extends FragmentActivity{
             // Declare Variable
@@ -55,7 +43,6 @@ public class Home extends FragmentActivity{
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(new TabsPagerAdapter(getSupportFragmentManager(), Home.this));
 
-
         //Give the SlidingTabLayout the ViewPager
         SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
 
@@ -69,7 +56,6 @@ public class Home extends FragmentActivity{
                 return getResources().getColor(R.color.headcol);
             }
         });
-
 
         // Center the tabs in the layout
         slidingTabLayout.setDistributeEvenly(true);

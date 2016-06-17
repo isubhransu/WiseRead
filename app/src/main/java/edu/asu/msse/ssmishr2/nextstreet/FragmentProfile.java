@@ -2,31 +2,35 @@ package edu.asu.msse.ssmishr2.nextstreet;
 
 /**
  * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
  *
  * @author Subhransu Mishra s.mishra@asu.edu
  *         MS Software Engineering, CIDSE, ASU
- * @version March 09 2015
+ *
+ * @version May 1st 2015
  */
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.TextView;
+
+import com.nextstreet.adapter.adapt.PeopleGridviewAdapter;
+import com.nextstreet.adapter.adapt.ProfileGridListViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class FragmentProfile extends Fragment {
 
@@ -51,7 +55,40 @@ public class FragmentProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        TextView followers = (TextView) view.findViewById(R.id.Followerscount);
+        TextView following = (TextView) view.findViewById(R.id.followingcount);
+        TextView name = (TextView) view.findViewById(R.id.PersonName);
+        TextView bio = (TextView) view.findViewById(R.id.Bio);
+
+        SharedPreferences pref  = PreferenceManager.getDefaultSharedPreferences(getActivity());//TODO SHARED PREFERENCE GIVING NULL
+        String s = pref.getString("email", null);
+
+        System.out.println("Email is "+s);
+        PersonDetailsAsync getuserdetails = new PersonDetailsAsync("demo");
+        getuserdetails.execute();
+        List<String> usrDetails = new ArrayList<String>();
+        try {
+            usrDetails = getuserdetails.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(usrDetails);
+
+        followers.setText(usrDetails.get(6));
+        following.setText(usrDetails.get(7));
+        name.setText(usrDetails.get(0)+" "+usrDetails.get(1));
+        bio.setText(usrDetails.get(4));
+
+        GridView gridView = (GridView) view.findViewById(R.id.myfeedgrid);
+
+
+        gridView.setAdapter(new ProfileGridListViewAdapter(view.getContext()));
+
         return view;
     }
 }

@@ -14,7 +14,17 @@
  * limitations under the License.
  */
 package edu.asu.msse.ssmishr2.nextstreet;
-
+/**
+ * Copyright 2015 Subhransu Mishra
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
+ *
+ * @author Subhransu Mishra s.mishra@asu.edu
+ *         MS Software Engineering, CIDSE, ASU
+ *
+ * @version May 1st 2015
+ */
 import android.R;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -133,19 +143,10 @@ class SlidingTabStrip extends LinearLayout {
         canvas.drawRect(0, height - mBottomBorderThickness, getWidth(), height, mBottomBorderPaint);
     }
 
-    /**
-     * Set the alpha value of the {@code color} to be the given {@code alpha} value.
-     */
     private static int setColorAlpha(int color, byte alpha) {
         return Color.argb(alpha, Color.red(color), Color.green(color), Color.blue(color));
     }
 
-    /**
-     * Blend {@code color1} and {@code color2} using the given ratio.
-     *
-     * @param ratio of which to blend. 1.0 will return {@code color1}, 0.5 will give an even blend,
-     *              0.0 will return {@code color2}.
-     */
     private static int blendColors(int color1, int color2, float ratio) {
         final float inverseRation = 1f - ratio;
         float r = (Color.red(color1) * ratio) + (Color.red(color2) * inverseRation);

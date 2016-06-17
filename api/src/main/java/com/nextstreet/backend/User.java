@@ -1,33 +1,54 @@
 package com.nextstreet.backend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
- *
- * @author Subhransu Mishra s.mishra@asu.edu
- *         MS Software Engineering, CIDSE, ASU
- * @version February 24 2015
- */
+* Copyright 2015 Subhransu Mishra
+        * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+        * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+        * you agree not to use source code or share source code with anyone.
+        *
+        * @author Subhransu Mishra s.mishra@asu.edu
+*         MS Software Engineering, CIDSE, ASU
+        *
+        * @version May 1st 2015
+        */
 public class User {
 
-    private int data;
+    public int active;
+    public List<String> namestr;
+    public List<String> emailstr;
+    public List<String> personDetail;
 
     public void setActive(int dta){
-        this.data = dta;
+        this.active = dta;
     }
+
+    public  void setNamestr(List<String> str){
+        this.namestr = str;
+    }
+
+    public void setPersonDetail(List<String> str){
+        this.personDetail = str;
+    }
+
+    public  List<String> getPersonDetail(){
+        return this.personDetail;
+    }
+    public List<String> getNamestr(){
+        return this.namestr;
+    }
+
+    public void setEmailstr(List<String> str){
+        this.emailstr = str;
+    }
+
+    public List<String> getEmailstr(){
+        return this.emailstr;
+    }
+
     public int getActive(){
-        return this.data;
+        return this.active;
     }
 }

@@ -2,11 +2,12 @@
 
     <!-- Base application theme. -->
 
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="AppTheme" parent="@android:style/Theme.Light">
         <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+        <item name="android:layout_height">65dp</item>
     </style>
 
     <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">#2B629C</item>
+        <item name="android:background">#ffffff</item>
     </style>
 </resources>

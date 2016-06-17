@@ -14,26 +14,18 @@ import com.nextstreet.backend.userApi.UserApi;
 import com.nextstreet.backend.userApi.model.User;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
  *
  * @author Subhransu Mishra s.mishra@asu.edu
  *         MS Software Engineering, CIDSE, ASU
- * @version February 24 2015
+ *
+ * @version May 1st 2015
  */
 
 public class NextstreetAsync extends AsyncTask<Void, Void, Integer> {
@@ -54,7 +46,7 @@ public class NextstreetAsync extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... params) {
-        Log.d(this.getClass().getSimpleName(), "in LOGIN onInBackground on" +
+        Log.d(this.getClass().getSimpleName(), "in LOGIN ondoInBackground on" +
                 (Looper.myLooper() == Looper.getMainLooper() ? "Main thread" : "Async thread"));
         if (service == null) { // Only do this once
             UserApi.Builder builder = new UserApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
@@ -62,9 +54,10 @@ public class NextstreetAsync extends AsyncTask<Void, Void, Integer> {
             service = builder.build();
             System.out.println("HERE IN AFTER API CONNECTS");
         }
+
         try {
             System.out.println("HERE IN TRY FOR SERVICE ACCESS");
-            response = service.getIfUserExist(utxt, ptxt).execute();
+            response = service.getIfUserExist(utxt).execute();
             //System.out.println(response.getActive());
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,7 +66,7 @@ public class NextstreetAsync extends AsyncTask<Void, Void, Integer> {
         return response.getActive();
     }
 }
-
+//ASYNCTASK FOR NEW USER REGISTRATION
 class RegisterAsync extends AsyncTask<Void, Void, Void>{
     private static UserApi service = null;
     User response = null;
@@ -89,7 +82,6 @@ class RegisterAsync extends AsyncTask<Void, Void, Void>{
         this.lname = lname;
         this.email = email;
     }
-
 
     @Override
     protected Void doInBackground(Void... params) {

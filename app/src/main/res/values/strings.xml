@@ -4,9 +4,8 @@
     <string name="app_name">WiseRead</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <color name="white">#E7E9EC</color>
-    <color name="headcol">#2B629C</color>
-    <color name="black">#CCCCCC</color>
+    <color name="headcol">#55ACEE</color>
+    <color name="black">#ffffff</color>
     <color name="bgcol">#CBD1DD</color>
 
 

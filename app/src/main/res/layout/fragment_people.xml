@@ -3,22 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff8400" >
+    android:background="#ffffff" >
 
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <GridView
+        android:id="@+id/peoplegrid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:columnWidth="200dp"
         android:gravity="center"
-        android:text="Design People"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
-    <ImageView
-        android:layout_width="wrap_content"
+        android:horizontalSpacing="2dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true">
+    </GridView>
+
+    <EditText
+        android:layout_width="300dp"
+        android:hint="Search influencers and freinds"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/peopledemo"
+        android:id="@+id/editText"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/search_bar"
+        android:layout_toRightOf="@+id/editText" />
+
 
 </RelativeLayout>

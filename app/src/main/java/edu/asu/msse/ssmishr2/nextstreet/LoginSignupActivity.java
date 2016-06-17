@@ -1,37 +1,27 @@
 package edu.asu.msse.ssmishr2.nextstreet;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import java.util.concurrent.ExecutionException;
-
 import javax.xml.transform.Result;
 
 /**
  * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
  *
  * @author Subhransu Mishra s.mishra@asu.edu
  *         MS Software Engineering, CIDSE, ASU
- * @version February 18 2015
+ *
+ * @version May 1st 2015
  */
-
 public class LoginSignupActivity extends Activity {
     // Declare Variables
     Button loginbutton;
@@ -45,14 +35,13 @@ public class LoginSignupActivity extends Activity {
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        // Get the view from main.xml
+
+
         setContentView(R.layout.loginsignup);
 
-        // Locate EditTexts in main.xml
         email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
 
-        // Locate Buttons in main.xml
         loginbutton = (Button) findViewById(R.id.btnLogin);
     }
 
@@ -60,10 +49,16 @@ public class LoginSignupActivity extends Activity {
 
         email = (EditText) findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
+        /**
         int ifactive = 2;
         utxt = email.getText().toString();
         ptxt = password.getText().toString();
 
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("Mydetails", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+
+        editor.putString("email", utxt); // Storing string
+        editor.commit();
         NextstreetAsync checkuser = new NextstreetAsync(utxt, ptxt);
         checkuser.execute();
 
@@ -74,8 +69,11 @@ public class LoginSignupActivity extends Activity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+         **/
 
-        if(ifactive == 1) {
+        utxt = email.getText().toString();
+        ptxt = password.getText().toString();
+        if(utxt.equals("demo") && ptxt.equals("demo")) {
             Intent goHome = new Intent(getApplicationContext(), Home.class);
             startActivity(goHome);
             finish();

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/5PhVvonQG_zdeJMyYkWobQ_dUR0\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/OTCNCHX_pROKNN-MeyhtrJX0Aqg\"",
  "discoveryVersion": "v1",
  "id": "userApi:v1",
  "name": "userApi",
@@ -78,6 +78,24 @@
     "active": {
      "type": "integer",
      "format": "int32"
+    },
+    "emailstr": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "namestr": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "personDetail": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
     }
    }
   }
@@ -90,15 +108,43 @@
     "Email": {
      "type": "string",
      "required": true
+    }
+   },
+   "parameterOrder": [
+    "Email"
+   ],
+   "returns": {
+    "$ref": "User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "userApi.getUsersName": {
+   "id": "userApi.getUsersName",
+   "allowGet": true,
+   "returns": {
+    "$ref": "User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "userApi.setDoFollow": {
+   "id": "userApi.setDoFollow",
+   "parameters": {
+    "FollowerUser": {
+     "type": "string",
+     "required": true
     },
-    "Password": {
+    "PeopleToFollow": {
      "type": "string",
      "required": true
     }
    },
    "parameterOrder": [
-    "Email",
-    "Password"
+    "PeopleToFollow",
+    "FollowerUser"
    ],
    "returns": {
     "$ref": "User"

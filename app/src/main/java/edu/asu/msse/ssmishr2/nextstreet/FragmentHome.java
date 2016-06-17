@@ -2,30 +2,25 @@ package edu.asu.msse.ssmishr2.nextstreet;
 
 /**
  * Copyright 2015 Subhransu Mishra
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * <p/>
- * Purpose:
+ * All Rights Reserved by Subhransu Mishra, Founder, Wiseread
+ * Purpose & restrictions: Only TA and Instructor of SER494 have rights to access the sourcecode. By accessing the source code
+ * you agree not to use source code or share source code with anyone.
  *
  * @author Subhransu Mishra s.mishra@asu.edu
  *         MS Software Engineering, CIDSE, ASU
- * @version March 09 2015
+ *
+ * @version May 1st 2015
  */
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.TextView;
+
+import com.nextstreet.adapter.adapt.HomeGridListViewAdapter;
+import com.nextstreet.adapter.adapt.PeopleGridviewAdapter;
 
 public class FragmentHome extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
@@ -40,8 +35,6 @@ public class FragmentHome extends Fragment {
         return fragment;
     }
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +45,9 @@ public class FragmentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        GridView gridView = (GridView) view.findViewById(R.id.homegrid);
+
+        gridView.setAdapter(new HomeGridListViewAdapter(view.getContext())); // uses the view to get the context instead of getActivity().
         return view;
     }
 }
